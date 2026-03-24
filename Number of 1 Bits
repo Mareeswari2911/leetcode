@@ -1,0 +1,30 @@
+class Solution {
+    public int hammingWeight(int n) {
+        int i=0;
+        int[] arr=new int[100];
+        while(n>0)
+        {
+            int bit=n%2;
+            arr[i]=bit;
+            i++;
+            n=n/2;
+        }
+        int[] bin=new int[i];
+        int k=0;
+        for(int j=i-1;j>=0;j--)
+        {
+            bin[k]=arr[j];
+            k++;
+        }
+        int sum=0;
+        for(int j=0;j<k;j++)
+        {
+            if(bin[j]==1)
+            {
+                sum++;
+            }
+        }
+        return sum;
+
+    }
+}
