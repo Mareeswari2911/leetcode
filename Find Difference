@@ -1,0 +1,14 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int charsum=0;
+        for(char c:t.toCharArray())
+        {
+            charsum+=c;
+        }
+        for(char c:s.toCharArray())
+        {
+            charsum-=c;
+        }
+        return (char)charsum;
+    }
+}
